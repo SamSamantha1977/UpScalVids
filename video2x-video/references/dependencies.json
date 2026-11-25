@@ -1,0 +1,27 @@
+{
+  "schema": "sam-media-skill-dependencies.v1",
+  "owner": "SamSamantha1977",
+  "publication_status": "RELEASE_PENDING",
+  "notes": "Renseigner chaque URL GitHub Release reelle et son SHA-256 calcule APRES publication. Aucune URL ni hash ne sont inventes.",
+  "artifacts": {
+    "ffmpeg": {
+      "windows-x64": {
+        "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/ffmpeg-windows-x64-2025-02-13.zip",
+        "sha256": "684fc9adee65ff4d0adaf5c269d00be490403e0e68938c6e0974fe31ae51a945",
+        "file": "ffmpeg-windows-x64-2025-02-13.zip",
+        "bytes": 130661781,
+        "published": false
+      }
+    },
+    "video2x-ncnn": {
+      "windows-x64": {
+        "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/video2x-ncnn-windows-x64-6.4.0.zip",
+        "sha256": "70dcdc11913453826b728b3639817b105d5242f8cd8ee57a4ee4780d171e8a58",
+        "file": "video2x-ncnn-windows-x64-6.4.0.zip",
+        "bytes": 204746873,
+        "published": false
+      }
+    }
+  },
+  "distribution_repository": "https://github.com/SamSamantha1977/UpScalVids"
+}

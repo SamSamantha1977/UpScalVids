@@ -1,0 +1,12 @@
+{
+  "repository": "SamSamantha1977/UpScalVids",
+  "created_on_github": true,
+  "native_assets_published": false,
+  "skill_zip": "video2x-video.zip",
+  "assets": [
+    "ffmpeg-windows-x64-2025-02-13.zip",
+    "video2x-ncnn-windows-x64-6.4.0.zip"
+  ],
+  "release_tag": "deps-v1.0.0",
+  "release_repository": "SamSamantha1977/UpScalVids"
+}
