@@ -7,18 +7,18 @@
     "ffmpeg": {
       "windows-x64": {
         "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/ffmpeg-windows-x64-2025-02-13.zip",
-        "sha256": "684fc9adee65ff4d0adaf5c269d00be490403e0e68938c6e0974fe31ae51a945",
+        "sha256": "54d99f06e60e16e2f2835eed9c30584e5ddf407ff61e5e7a3a65e5065c67ed5e",
         "file": "ffmpeg-windows-x64-2025-02-13.zip",
-        "bytes": 130661781,
+        "bytes": 121652518,
         "published": false
       }
     },
     "video2x-ncnn": {
       "windows-x64": {
         "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/video2x-ncnn-windows-x64-6.4.0.zip",
-        "sha256": "70dcdc11913453826b728b3639817b105d5242f8cd8ee57a4ee4780d171e8a58",
+        "sha256": "dc99dfc0d04a46fd2c3491016afc46781b0f43649be78d11e7c9dc23264ee4f3",
         "file": "video2x-ncnn-windows-x64-6.4.0.zip",
-        "bytes": 204746873,
+        "bytes": 198825927,
         "published": false
       }
     }
