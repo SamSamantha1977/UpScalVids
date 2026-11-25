@@ -41,7 +41,7 @@ def ffprobe() -> str:
 
 
 def execute(cmd: list[str], timeout: int = 7200) -> None:
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
     if result.returncode != 0:
         raise RuntimeError(f"Command failed rc={result.returncode}: {result.stderr[-1200:]}")
 
@@ -50,7 +50,7 @@ def probe(path: Path) -> dict:
     result = subprocess.run(
         [ffprobe(), "-v", "error", "-show_entries",
          "stream=codec_type,width,height,r_frame_rate,nb_frames,duration:format=duration",
-         "-of", "json", str(path)], capture_output=True, text=True, timeout=30)
+         "-of", "json", str(path)], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
     if result.returncode != 0:
         raise RuntimeError(f"Invalid video: {path} {result.stderr[-500:]}")
     obj = json.loads(result.stdout)
@@ -149,11 +149,31 @@ def native_enhance(src: Path, dst: Path, scale: int, model: str) -> None:
     cmd = [engine, "-i", str(src), "-o", str(dst), "-p", "realesrgan", "-s", str(native_scale),
            "--realesrgan-model", model, "-e", "crf=17", "--no-progress"]
     # Video2X on Intel UHD may exit abnormally despite an ostensibly readable output.
-    p = subprocess.run(cmd, capture_output=True, text=True, timeout=7200, cwd=str(Path(engine).resolve().parent) if Path(engine).is_file() else None)
+    p = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                       timeout=7200, cwd=str(Path(engine).resolve().parent) if Path(engine).is_file() else None)
+    if not dst.is_file():
+        raise RuntimeError(f"Video2X did not produce output (native rc={p.returncode}). Detail: {(p.stderr or '')[-700:]}")
+    # Some Intel UHD native runs produce all frames then exit with code 0xC0000409.
+    # Accept only a complete and probeable result; incomplete output is rejected.
     if p.returncode:
-        raise RuntimeError(f"Video2X abnormal native exit ({p.returncode}), output not published. Detail: {p.stderr[-700:]}")
-    if not dst.exists():
-        raise RuntimeError("Video2X did not produce output")
+        try:
+            original = probe(src)
+            native = probe(dst)
+            input_seconds = duration(original)
+            output_seconds = duration(native)
+            if input_seconds <= 0 or not 0.94 * input_seconds <= output_seconds <= 1.12 * input_seconds:
+                raise RuntimeError("Incomplete native duration")
+            src_frames = int(vstream(original).get("nb_frames") or 0)
+            out_frames = int(vstream(native).get("nb_frames") or 0)
+            if src_frames and out_frames and abs(src_frames-out_frames) > max(1, round(src_frames*0.03)):
+                raise RuntimeError("Incomplete native frame count")
+            if has_audio(original) and not has_audio(native):
+                raise RuntimeError("Native output missing audio")
+            if vstream(native).get("width", 0) < vstream(original).get("width", 0):
+                raise RuntimeError("Native resolution unexpectedly reduced")
+        except Exception as e:
+            raise RuntimeError(f"Video2X failed with invalid native output (rc={p.returncode}): {e}") from e
+        print(f"WARNING: Video2X native exited with code {p.returncode}, but validated frame count, duration, audio and dimensions.",file=sys.stderr)
 
 
 def safe_publish(staged: Path, dest: Path, force: bool) -> None:
