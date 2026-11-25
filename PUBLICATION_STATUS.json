@@ -1,14 +1,13 @@
 {
   "repository": "SamSamantha1977/UpScalVids",
-  "created_on_github": true,
+  "repository_role": "native_dependencies_and_upstream_links_only",
+  "skill_zip_in_repo": false,
   "native_assets_published": true,
-  "skill_zip": "video2x-video.zip",
-  "assets": [
-    "ffmpeg-windows-x64-2025-02-13.zip",
-    "video2x-ncnn-windows-x64-6.4.0.zip"
-  ],
   "release_tag": "deps-v1.0.0",
-  "release_repository": "SamSamantha1977/UpScalVids",
-  "remote_release_verified": true,
-  "light_release_tag": "v1.0.2"
+  "release_url": "https://github.com/SamSamantha1977/UpScalVids/releases/tag/deps-v1.0.0",
+  "model_weights_verified": true,
+  "linux_distribution_url_verified": true,
+  "linux_gpu_execution_validated": false,
+  "windows_gpu_execution_validated": false,
+  "last_audit_date": "2026-11-25"
 }

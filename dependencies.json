@@ -1,0 +1,40 @@
+{
+  "schema": "sam-media-skill-dependencies.v2",
+  "owner": "SamSamantha1977",
+  "publication_status": "PUBLISHED_VERIFIED",
+  "notes": "Liens GitHub ou GitHub d'origine publies, SHA256 reels verifies; depots = ressources, ZIP skills = distributions independantes.",
+  "artifacts": {
+    "ffmpeg": {
+      "windows-x64": {
+        "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/ffmpeg-windows-x64-2025-02-13.zip",
+        "sha256": "54d99f06e60e16e2f2835eed9c30584e5ddf407ff61e5e7a3a65e5065c67ed5e",
+        "file": "ffmpeg-windows-x64-2025-02-13.zip",
+        "bytes": 121652518,
+        "published": true
+      }
+    },
+    "video2x-ncnn": {
+      "windows-x64": {
+        "url": "https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/video2x-ncnn-windows-x64-6.4.0.zip",
+        "sha256": "dc99dfc0d04a46fd2c3491016afc46781b0f43649be78d11e7c9dc23264ee4f3",
+        "file": "video2x-ncnn-windows-x64-6.4.0.zip",
+        "bytes": 198825927,
+        "published": true
+      },
+      "linux-x64": {
+        "url": "https://github.com/k4yt3x/video2x/releases/download/6.4.0/Video2X-x86_64.AppImage",
+        "sha256": "8238fc38325107f0a08a140d069baee3db80c5ac7470b0a516cc683183f5f92d",
+        "bytes": 231232704,
+        "format": "appimage",
+        "published": true,
+        "model_contents": "Video2X commandline + RIFE and RealESRGAN models bundled in AppImage",
+        "runtime": "--appimage-extract-and-run"
+      }
+    }
+  },
+  "distribution_repository": "https://github.com/SamSamantha1977/UpScalVids",
+  "distribution_role": "dependency_resources_only",
+  "installation_policy": "automatic at runtime when missing; pinned HTTPS and SHA256 only",
+  "linux_upstream_source": "https://github.com/k4yt3x/video2x/releases/download/6.4.0/Video2X-x86_64.AppImage",
+  "linux_status": "archive+models_verified_on_MINIPC; actual_Linux_GPU_execution_not_validated"
+}
