@@ -6,3 +6,5 @@ Real-CUGAN NCNN: https://github.com/nihui/realcugan-ncnn-vulkan
 NCNN: https://github.com/Tencent/ncnn
 FFmpeg: https://ffmpeg.org et https://github.com/FFmpeg/FFmpeg
 Les licences des composants tiers restent independantes du code de la skill.
+
+- Binaires FFmpeg Linux x64: https://github.com/binmgr/ffmpeg/releases/tag/v9.0.2

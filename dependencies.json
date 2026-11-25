@@ -11,6 +11,14 @@
         "file": "ffmpeg-windows-x64-2025-02-13.zip",
         "bytes": 121652518,
         "published": true
+      },
+      "linux-x64": {
+        "url": "https://github.com/binmgr/ffmpeg/releases/download/v9.0.2/ffmpeg-linux-amd64.tar.gz",
+        "sha256": "d7a22611c3d6793d2939ff992db8feecfdb9c206a583aa31d9a887e0992502c8",
+        "bytes": 93270996,
+        "format": "tar.gz",
+        "published": true,
+        "source_license": "See upstream binmgr/ffmpeg release and FFmpeg copyright/licenses"
       }
     },
     "video2x-ncnn": {

@@ -8,6 +8,9 @@ Ce dépôt contient les dépendances lourdes (GitHub Releases), les manifestes S
 - ffmpeg / windows-x64 : 121652518 octets
   - Téléchargement : https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/ffmpeg-windows-x64-2025-02-13.zip
   - SHA-256 : 54d99f06e60e16e2f2835eed9c30584e5ddf407ff61e5e7a3a65e5065c67ed5e
+- ffmpeg / linux-x64 : 93270996 octets
+  - Téléchargement : https://github.com/binmgr/ffmpeg/releases/download/v9.0.2/ffmpeg-linux-amd64.tar.gz
+  - SHA-256 : d7a22611c3d6793d2939ff992db8feecfdb9c206a583aa31d9a887e0992502c8
 - video2x-ncnn / windows-x64 : 198825927 octets
   - Téléchargement : https://github.com/SamSamantha1977/UpScalVids/releases/download/deps-v1.0.0/video2x-ncnn-windows-x64-6.4.0.zip
   - SHA-256 : dc99dfc0d04a46fd2c3491016afc46781b0f43649be78d11e7c9dc23264ee4f3
