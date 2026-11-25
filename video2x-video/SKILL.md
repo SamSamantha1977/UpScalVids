@@ -33,3 +33,11 @@ Consulter `references/RUNTIME.md` avant toute installation. Ne jamais présumer 
 
 ## Indépendance
 Aucune dépendance à Upscayl-Image, aucun chemin MINIPC codé en dur et aucune donnée personnelle embarquée. Le seul SKILL.md de cette archive est celui-ci. Les scripts Python sont appelables sans autre skill.
+
+## Distribution GitHub officielle de cette skill
+
+- Dépôt de cette skill exclusivement : https://github.com/SamSamantha1977/UpScalVids
+- Archive légère : https://github.com/SamSamantha1977/UpScalVids/releases/download/v1.0.1/video2x-video.zip
+- Release de dépendances natives vérifiées par SHA-256 : https://github.com/SamSamantha1977/UpScalVids/releases/tag/deps-v1.0.0
+- Ne jamais charger les fichiers de l'autre skill ni utiliser le dépôt historique mixte.
+- Les binaires Windows ne fonctionnent pas sous Linux. Les moteurs IA ont leurs propres licences et peuvent nécessiter Vulkan.

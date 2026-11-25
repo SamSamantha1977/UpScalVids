@@ -25,3 +25,14 @@ No credential, Cassandre file, private user media, or Windows executable is trac
 ## GitHub release distribution
 
 The heavy native dependencies are attached to the versioned GitHub Release in this repository only. Every download URL and SHA-256 in video2x-video/references/dependencies.json must point to this repository. See the actual Release assets and documented supported platform matrix; Windows binaries do not run on Linux or macOS.
+
+## Téléchargements vérifiés
+
+Les distributions sont séparées pour ce dépôt :
+
+- [Skill Python OpenAI v1.0.1](https://github.com/SamSamantha1977/UpScalVids/releases/download/v1.0.1/video2x-video.zip)
+- [Dépendances natives Windows x64](https://github.com/SamSamantha1977/UpScalVids/releases/tag/deps-v1.0.0)
+- Manifeste avec URL et empreintes SHA-256 : [dependencies.json](video2x-video/references/dependencies.json)
+
+Les modules natifs tiers conservent leurs propres licences. Voir [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Pour un environnement ChatGPT Linux, les exécutables Windows ne sont **pas** utilisables ; la skill recherche d'abord les logiciels présents dans l'environnement.
